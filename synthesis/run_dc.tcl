@@ -2,12 +2,12 @@ set PDK_PATH ./../ref
 
 source -echo -verbose ./rm_setup/dc_setup.tcl
 source -verbose ./rm_setup/dc_setup.tcl
-set RTL_SOURCE_FILES ./input/seq_110.v
+set RTL_SOURCE_FILES ./input/top.v
 
 define_design_lib WORK -path ./WORK
 
-analyze -format verilog ./input/seq_110.v
-elaborate seq_110
+analyze -format verilog ./input/top.v
+elaborate top
 current_design
 
 report_area
@@ -18,7 +18,7 @@ report_qor
 report_timing
 
 
-read_sdc -echo ./CONSTRAINTS/seq_110.sdc
+read_sdc -echo ./CONSTRAINTS/top.sdc
 set_clock_uncertainty -setup 0.300 [get_clocks clk]
 source -echo -verbose ./rm_setup/dc_setup.tcl
 report_timing 
