@@ -50,6 +50,7 @@ Timing constraints
 Optimized path
 
 ***Key Concepts***
+
 **🔹Netlist**
 A netlist is a description of how components are connected.
 
@@ -99,6 +100,7 @@ Because they define:
 
 
 ***📌4. Physical Design (IC Compiler II)***
+
 **🔹4.1 Floorplanning**
 
 Defines:
