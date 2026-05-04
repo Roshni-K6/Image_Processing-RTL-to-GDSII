@@ -1,6 +1,6 @@
 **RTL to GDSII Flow**
 
-**RTL (Register Transfer Level)**
+**RTL (Register Transfer Level)**:
 RTL describes:
 Data movement
 Logic operations
@@ -8,7 +8,7 @@ Clock behaviour
 
 It is written in Verilog and defines how data flows and how logic is implemented.
 
-**GDSII (Graphic Design System II)**
+**GDSII (Graphic Design System II)**:
 GDSII is the final layout file of the chip.
 It contains:
 All layers (metal, poly, diffusion, etc.)
@@ -17,14 +17,14 @@ Exact physical geometry of the design
 This file is sent for fabrication.
 
 
-***1. RTL Design***
+***📌1. RTL Design***
 Written in Verilog
 Describes functionality of the circuit
 
 Output:RTL code
 
 
-***2. Simulation (VCS)***
+***📌2. Simulation (VCS)***
 Steps:
 Run testbench
 Verify correctness
@@ -37,7 +37,7 @@ Console outputs
 Purpose: Ensure the design works correctly before synthesis
 
 
-***3. Synthesis (Design Compiler)***
+***📌3. Synthesis (Design Compiler)***
 RTL is converted into logic gates.
 
 Example:(R + G + B) / 3
@@ -50,18 +50,21 @@ Timing constraints
 Optimized path
 
 ***Key Concepts***
-**Netlist**
+**🔹Netlist**
 A netlist is a description of how components are connected.
 
-**SDC (Synopsys Design Constraints)**
+
+**🔹SDC (Synopsys Design Constraints)**
 Defines timing constraints.
 How fast should the circuit run?
 
-**DDC (Design Database)**
+
+**🔹DDC (Design Database)**
 Binary format of the design
 Internal to synthesis tool
 
-**VS (Technology Independent Netlist)**
+
+**🔹VS (Technology Independent Netlist)**
 No real gates
 Logical representation only
 Used for logic optimization
@@ -71,7 +74,8 @@ y = a & b
 z = a & b
 → optimized to share one AND gate
 
-**VG (Technology Dependent Netlist / Mapped Netlist)**
+
+**🔹VG (Technology Dependent Netlist / Mapped Netlist)**
 Real standard cells are used
 Based on standard cell library
 
@@ -94,8 +98,8 @@ Because they define:
 -Timing behaviour
 
 
-***4. Physical Design (IC Compiler II)***
-**4.1 Floorplanning**
+***📌4. Physical Design (IC Compiler II)***
+**🔹4.1 Floorplanning**
 
 Defines:
 Chip size
@@ -104,19 +108,19 @@ I/O pin positions
 
 Determines where everything will be placed roughly.
 
-**4.2 Power Planning**
+**🔹4.2 Power Planning**
 Builds power network
 VDD and GND lines
 
 Every gate requires power to operate.
 
-**4.3 Placement**
+**🔹4.3 Placement**
 Places all gates on the chip
 
 Input:Mapped netlist
 Output:Coordinates of each gate
 
-**4.4 Clock Tree Synthesis (CTS)**
+**🔹4.4 Clock Tree Synthesis (CTS)**
 Distributes clock signal evenly
 
 Requirement:
@@ -126,7 +130,7 @@ Uses:
 Buffers
 Inverters
 
-**4.5 Routing**
+**🔹4.5 Routing**
 Connects all gates using metal wires
 
 Types:
@@ -137,7 +141,7 @@ Output:
 Complete connections
 
 
-***5. GDSII Generation***
+***📌5. GDSII Generation***
 
 Final output file containing:
 All layers
