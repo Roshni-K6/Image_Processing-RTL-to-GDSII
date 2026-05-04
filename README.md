@@ -71,7 +71,9 @@ Logical representation only
 Used for logic optimization
 
 Example:
+
 y = a & b
+
 z = a & b
 → optimized to share one AND gate
 
@@ -90,11 +92,15 @@ Timing report
 Area report
 Constraints file (SDC)
 
-Important Note
+Important Note:
+
 Only the following are used for physical design:
+
 -Mapped netlist
 -SDC file
+
 Because they define:
+
 -Connections
 -Timing behaviour
 
